@@ -33,6 +33,6 @@ jobs:
       - name: Create archive and copy files
         run: |
           mkdir -p archive
-          cp -r * archive/
+          cp -r !(archive) archive/
     
 
