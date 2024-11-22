@@ -21,4 +21,18 @@ jobs:
       # Runs a single command using the runners shell
       - name: Run a one-line script
         run: echo Hello, world!
+    #On va créer un dossier archive et copier tous les dossiers du repository dessus
+    # Clean up the archive folder if it already exists
+      - name: Clean up archive folder
+        run: |
+          if [ -d "archive" ]; then
+            rm -rf archive
+          fi
+
+      # Create archive and copy files
+      - name: Create archive and copy files
+        run: |
+          mkdir -p archive
+          cp -r * archive/
+    
 
